@@ -12,7 +12,7 @@ const RatingEdit = (props) => {
 
 const ratingUpdate = (event, rating) => {
   event.preventDefault();
-  fetch(`${APIURL}/api/rating/${props.ratingToUpdate.id}`, {
+  fetch(`${APIURL}/rating/${props.ratingToUpdate.id}`, {
     method: "PUT",
     body: JSON.stringify({rating: {nameOfRide: editNameOfRide, date: editDate, waitTime: editWaitTime, rideRating: editRideRating, comments: editComments}}),
     headers: new Headers ({

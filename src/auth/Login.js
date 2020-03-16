@@ -8,6 +8,7 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
+    event.preventDefault();
     fetch(`${APIURL}/api/user/login`, {//took out /api before user
       method: "POST",
       body: JSON.stringify({user: {email: email, password: password}}),
@@ -19,7 +20,6 @@ const Login = (props) => {
       ).then((data) => {
         props.setToken(data.sessionToken);
       })
-      event.preventDefault();
   }
 
   return(

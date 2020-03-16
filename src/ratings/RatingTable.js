@@ -4,7 +4,7 @@ import APIURL from '../helpers/environment'
 
 const RatingTable = (props) => {
   const deleteRating = (riderrating) => {
-    fetch(`${APIURL}/api/rating/${riderrating.id}`, {
+    fetch(`${APIURL}/rating/${riderrating.id}`, {
       method: "DELETE",
       headers: new Headers ({
         "Content-Type": "application/json",
