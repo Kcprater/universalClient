@@ -6,7 +6,7 @@ switch (window.location.universalApi) {
     break;
     case 'kp-universalclient.herokuapp.com/':
 
-    APIURL ='https://kp-universalapi.herokuapp.com/ '
+    APIURL ='https://kp-universalapi.herokuapp.com'
     
 }
 
