@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import APIURL from '../helpers/environment'
 
 const Signup = (props) => {
   const [email, setEmail] = useState('');
@@ -7,7 +8,7 @@ const Signup = (props) => {
 
   const handleSubmit = (event) => {
 //prevent default was here
-    fetch("http://localhost:3000/api/user", {
+    fetch(`${APIURL}/api/user`, {
       method: "POST",
       body: JSON.stringify({user:{email: email, passwordhash: passwordhash}}),//change passwordhash to password? setPasswordHash below would need changed as well
       headers: new Headers ({

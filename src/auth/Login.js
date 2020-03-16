@@ -1,13 +1,14 @@
 import React, {useState} from "react";
 import {Form, FormGroup, Label, Input, Button} from "reactstrap";
 import "./auth.css"
+import APIURL from '../helpers/environment'
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
-    fetch("http://localhost:3000/api/user/login", {
+    fetch(`${APIURL}/api/user/login`, {
       method: "POST",
       body: JSON.stringify({user: {email: email, password: password}}),
       headers: new Headers ({
