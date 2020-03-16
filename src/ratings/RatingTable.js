@@ -17,7 +17,7 @@ const RatingTable = (props) => {
     return props.riderratings.map((riderrating, index) => {
       return(
         <tr key={index}>
-          <th scope="row">{riderrating.id}</th>
+          {/* <th scope="row"></th> */}
           <td>{riderrating.nameOfRide}</td>
           <td>{riderrating.date}</td>
           <td>{riderrating.waitTime}</td>
@@ -39,11 +39,11 @@ const RatingTable = (props) => {
       <Table striped>
         <thead>
           <tr>
-            <th>#</th>
-            <th>Name of Ride</th>
+            {/* <th>#</th> */}
+            <th>Attraction Name</th>
             <th>Date</th>
-            <th>Wait Time</th>
-            <th>Ride Rating</th>
+            <th>Wait Time In Minutes</th>
+            <th>Attraction Rating</th>
             <th>Comments</th>
           </tr>
         </thead>

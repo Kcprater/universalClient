@@ -24,16 +24,16 @@ const Signup = (props) => {
   return(
     <div>
       <h1>Sign Up</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form id='signup' onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
           <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="password">Password</Label>
-          <Input onChange={(e) => setPasswordHash(e.target.value)} name="password" value={passwordhash}/>  
+          <Input type="password" onChange={(e) => setPasswordHash(e.target.value)} name="password" value={passwordhash}/>  
         </FormGroup>
-        <Button type="submit">Signup</Button>
+        <Button id="button" type="submit">Signup</Button>
       </Form>
     </div>
   )

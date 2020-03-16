@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import './Navbar.css';
 import {
   Collapse,
   Navbar,
@@ -8,6 +9,9 @@ import {
   NavItem,
   Button,
 } from "reactstrap";
+// import { Route, Link, Switch} from 'react-router-dom';
+// import Home from './Home' //<Route exact path="/home">Home /></Route>
+// import logo from '../assets/logo2.png';
 
 const Sitebar = (props) => {
 
@@ -18,18 +22,22 @@ const Sitebar = (props) => {
     setIsOpen(newIsOpen);
   }
 
+//deleted href="/" after navbarbrand
   return(
-    <Navbar color="faded" light expand="md">
-      <NavbarBrand href="/">Universal Studios</NavbarBrand>
+    <div>
+    <div className="title">UNIVERSAL ORLANDO ATTRACTION GUIDE! </div>
+    <Navbar className="bar" light expand="md">
+      <NavbarBrand></NavbarBrand>
       <NavbarToggler onClick={toggle}/>
       <Collapse isOpen={isOpen} navbar>
         <Nav className="ml-auto" navbar>
           <NavItem>
-            <Button onClick={props.clickLogout}>Logout</Button>
+          <Button id="logout" onClick={props.clickLogout}>Log Out</Button>
           </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
+    </div>
   )
 }
 

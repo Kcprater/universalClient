@@ -1,12 +1,13 @@
 import React, {useState} from "react";
 import {Form, FormGroup, Label, Input, Button} from "reactstrap";
+import "./auth.css"
 
 const Login = (props) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
-    fetch("http://localhost:3000/api/user", {
+    fetch("http://localhost:3000/api/user/login", {
       method: "POST",
       body: JSON.stringify({user: {email: email, password: password}}),
       headers: new Headers ({
@@ -23,16 +24,16 @@ const Login = (props) => {
   return(
     <div>
       <h1>Login</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form id="login" onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
           <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="password">Password</Label>
-          <Input  onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
+          <Input type="password" onChange={(e) => setPassword(e.target.value)} name="password" value={password}/>
         </FormGroup>
-        <Button type="submit">Login</Button>
+        <Button id="button" type="submit">Login</Button>
       </Form>
     </div>
   )

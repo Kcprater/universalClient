@@ -40,18 +40,13 @@ const RatingIndex = (props) => {
     setUpdateActive(false);
   }
 
-  // useEffect(() => {
-  //   fetchRatings();
-  // }, [])//getting an issue here ///moved above but left this for reference
-
-
   return(
     <Container>
       <Row>
         <Col md="3">
           <CreateRating fetchRatings={fetchRatings} token={props.token}/>
         </Col>
-        <Col md="9">
+        <Col md="8">
           <RatingTable riderratings={riderratings} editUpdateRating={editUpdateRating} updateOn={updateOn} fetchRatings={fetchRatings}
           token={props.token}/>
         </Col>
