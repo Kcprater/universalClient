@@ -3,7 +3,7 @@ import {Container, Row, Col} from 'reactstrap';
 import Login from './Login';
 import Signup from './Signup';
 import "./auth.css"
-import APIURL from '../helpers/environment'
+
 
 const Auth = (props) => {
   return (

@@ -12,7 +12,7 @@ const RatingIndex = (props) => {
   const [ratingToUpdate, setRatingToUpdate] = useState({});
 
   const fetchRatings = () => {
-    fetch(`http://${APIURL}/api/rating`, {
+    fetch(`${APIURL}/api/rating`, {
       method: "GET",
       headers: new Headers ({
         "Content-Type": "application/json",
