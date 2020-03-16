@@ -8,7 +8,7 @@ const Login = (props) => {
   const [password, setPassword] = useState('');
 
   const handleSubmit = (event) => {
-    fetch(`${APIURL}/user/login`, {//took out /api before user
+    fetch(`${APIURL}/api/user/login`, {//took out /api before user
       method: "POST",
       body: JSON.stringify({user: {email: email, password: password}}),
       headers: new Headers ({

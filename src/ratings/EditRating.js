@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from "reactstrap";
+import APIURL from '../helpers/environment'
 
 const RatingEdit = (props) => {
   // const [editID, setEditID] = useState(props.rider.id)
@@ -11,7 +12,7 @@ const RatingEdit = (props) => {
 
 const ratingUpdate = (event, rating) => {
   event.preventDefault();
-  fetch(`http://localhost:3000/api/rating/${props.ratingToUpdate.id}`, {
+  fetch(`${APIURL}/api/rating/${props.ratingToUpdate.id}`, {
     method: "PUT",
     body: JSON.stringify({rating: {nameOfRide: editNameOfRide, date: editDate, waitTime: editWaitTime, rideRating: editRideRating, comments: editComments}}),
     headers: new Headers ({

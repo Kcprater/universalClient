@@ -3,6 +3,7 @@ import {Container, Row, Col} from "reactstrap";
 import CreateRating from "./CreateRating";
 import RatingTable from "./RatingTable";
 import EditRating from "./EditRating";
+import APIURL from '../helpers/environment'
 
 const RatingIndex = (props) => {
 
@@ -11,7 +12,7 @@ const RatingIndex = (props) => {
   const [ratingToUpdate, setRatingToUpdate] = useState({});
 
   const fetchRatings = () => {
-    fetch("http://localhost:3000/api/rating", {
+    fetch(`http://${APIURL}/api/rating`, {
       method: "GET",
       headers: new Headers ({
         "Content-Type": "application/json",

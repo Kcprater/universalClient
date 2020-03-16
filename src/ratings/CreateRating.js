@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import {Button, Form, FormGroup, Label, Input} from "reactstrap";
 import './Ratings.css';
+import APIURL from '../helpers/environment'
 
 const CreateRating = (props) => {
   // const [rider, setRider] = useState('');//may not need
@@ -11,7 +12,7 @@ const CreateRating = (props) => {
   const [comments, setComments] = useState('');
 
   const handleSubmit = (e) => {
-    fetch(`http://localhost:3000/api/rating`, {
+    fetch(`http://${APIURL}/api/rating`, {
       method: "POST",
       body: JSON.stringify({rating: {nameOfRide: nameOfRide, date: date, waitTime: waitTime, rideRating: rideRating, comments: comments}}),
       headers: new Headers({

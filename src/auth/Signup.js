@@ -10,7 +10,7 @@ const Signup = (props) => {
 //prevent default was here
     fetch(`${APIURL}/api/user`, {
       method: "POST",
-      body: JSON.stringify({user:{email: email, passwordhash: passwordhash}}),//change passwordhash to password? setPasswordHash below would need changed as well
+      body: JSON.stringify({user:{email: email, passwordhash: passwordhash}}),
       headers: new Headers ({
         "Content-Type": "application/json"
       })
