@@ -13,7 +13,7 @@ const CreateRating = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${APIURL}/rating`, {
+    fetch(`${APIURL}/api/rating`, {
       method: "POST",
       body: JSON.stringify({rating: {nameOfRide: nameOfRide, date: date, waitTime: waitTime, rideRating: rideRating, comments: comments}}),
       headers: new Headers({
