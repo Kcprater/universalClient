@@ -1,24 +1,53 @@
 td{
-  /* overflow: scroll; */
   border: 1px solid white;
   color: white;
-  font-size: 15px;
+  font-size: 16px;
   background-color: darkblue;
 }
 
 th{
   border: 1px solid white;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
   background-color: darkblue;
 }
 
 table {
-  
+  color: white;
+  /* max-height: 300px; */
   position: absolute;
-  top: 55%;
-  left: 55%;
-  transform: translate(-25%, -25%);
+  top: 15%;
+  left: 5%;
+  transform: translate( 0%, 0%);
   border-collapse: collapse;
   border: 3px solid white;
 }
+
+.table-main thead{
+  width: 97%
+}
+
+.table-main tbody{
+  height: 500px;
+  overflow-y: scroll;
+}
+
+thead, tbody {
+  display: block;
+}
+
+h3{
+  color: white;
+}
+
+#update {
+  border-radius: 10px;
+}
+
+#delete {
+  border-radius: 10px;
+}
+
+/* #update.titlestyle{
+  font-size: small;
+} */

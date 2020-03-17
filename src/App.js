@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import Sitebar from './home/Navbar';
-import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
-// import {BrowserRouter as Router} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.css';
+import Sitebar from './home/Navbar';
 import Auth from './auth/Auth';
 import RatingIndex from './ratings/RatingIndex';
 
@@ -21,12 +20,6 @@ function App() {
     setSessionToken(newToken);
     // console.log(sessionToken);
   }
-
-  const clearToken = () => {
-    localStorage.clear();
-    setSessionToken('');
-  }
-
   const protectedViews = () => {
     return (sessionToken === localStorage.getItem('token') ? 
       <RatingIndex clickLogout={clearToken} token={sessionToken}/>
@@ -34,9 +27,15 @@ function App() {
     : <Auth setToken={setToken}/>)
   }
 
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
+
+
   return (
     <div>
-      <Sitebar clickLogout={clearToken}/>
+      <Sitebar clickLogout={clearToken} token={sessionToken}/>
       {protectedViews()}
     </div>
   );

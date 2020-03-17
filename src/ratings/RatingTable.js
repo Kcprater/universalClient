@@ -1,5 +1,6 @@
 import React from "react";
 import {Table, Button} from "reactstrap";
+import './Ratings.css';
 import APIURL from '../helpers/environment'
 
 const RatingTable = (props) => {
@@ -25,8 +26,8 @@ const RatingTable = (props) => {
           <td>{riderrating.rideRating}</td>
           <td>{riderrating.comments}</td>
           <td>
-            <Button color="info" onClick={() => {props.editUpdateRating(riderrating); props.updateOn()}}>Update Rating</Button>
-            <Button color="danger" onClick={() => {deleteRating(riderrating)}}>Delete Rating</Button>
+            <Button size="small" id="update" color="primary" onClick={() => {props.editUpdateRating(riderrating); props.updateOn()}}>Update</Button>
+            <Button size="small" id="delete" color="danger" onClick={() => {deleteRating(riderrating)}}>Delete</Button>
           </td>
         </tr>
       )
@@ -37,13 +38,13 @@ const RatingTable = (props) => {
     <div>
       <h3>Rating History</h3>
       <hr/>
-      <Table striped>
+      <Table className="table-main">
         <thead>
           <tr>
             {/* <th>#</th> */}
             <th>Attraction Name</th>
             <th>Date</th>
-            <th>Wait Time In Minutes</th>
+            <th>Wait Time (minutes)</th>
             <th>Attraction Rating</th>
             <th>Comments</th>
           </tr>
