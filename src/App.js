@@ -20,17 +20,18 @@ function App() {
     setSessionToken(newToken);
     // console.log(sessionToken);
   }
-  const protectedViews = () => {
-    return (sessionToken === localStorage.getItem('token') ? 
-      <RatingIndex clickLogout={clearToken} token={sessionToken}/>
-
-    : <Auth setToken={setToken}/>)
-  }
 
   const clearToken = () => {
     localStorage.clear();
     setSessionToken('');
   }
+
+  const protectedViews = () => {
+    return (sessionToken === localStorage.getItem('token') ? 
+      <RatingIndex token={sessionToken} clickLogout={clearToken} />
+    : <Auth setToken={setToken}/>)
+  }
+
 
 
   return (

@@ -28,7 +28,7 @@ const Login = (props) => {
       <Form id="login" onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
-          <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
+          <Input autocomplete="off" onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="password">Password</Label>

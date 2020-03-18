@@ -4,6 +4,7 @@ import './Ratings.css';
 import APIURL from '../helpers/environment'
 
 const RatingTable = (props) => {
+  console.log(props)
   const deleteRating = (riderrating) => {
     fetch(`${APIURL}/api/rating/${riderrating.id}`, {
       method: "DELETE",

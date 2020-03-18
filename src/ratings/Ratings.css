@@ -28,7 +28,7 @@ table {
 }
 
 .table-main tbody{
-  height: 500px;
+  height: 60vh;
   overflow-y: scroll;
 }
 
@@ -58,7 +58,7 @@ h2{
 
 .date {
   width: 18%;
-  text-align: center center;
+  text-align: center;
 }
 
 .wait{
@@ -68,7 +68,7 @@ h2{
 
 .rating{
   width: 15%;
-  text-align: center center;
+  text-align: center;
 }
 
 .comments{

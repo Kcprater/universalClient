@@ -6,6 +6,7 @@ import EditRating from "./EditRating";
 import APIURL from '../helpers/environment'
 
 const RatingIndex = (props) => {
+  console.log(props)
 
   const [riderratings, setRiderRatings] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);

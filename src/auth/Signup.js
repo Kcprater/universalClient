@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import "./auth.css"
 import APIURL from '../helpers/environment'
 
 const Signup = (props) => {
@@ -7,19 +8,24 @@ const Signup = (props) => {
   const [passwordhash, setPasswordHash] = useState('');
 
   const handleSubmit = (event) => {
-//prevent default was here
-    fetch(`${APIURL}/api/user`, {
-      method: "POST",
-      body: JSON.stringify({user:{email: email, passwordhash: passwordhash}}),
-      headers: new Headers ({
-        "Content-Type": "application/json"
-      })
-    }).then(
-      (response) => response.json()
-    ).then((data) => {
-      props.setToken(data.sessionToken)
-    })
     event.preventDefault();
+
+    if(passwordhash.length < 5) {
+      alert('Password must be at least 5 characters')
+    } else {
+      fetch(`${APIURL}/api/user`, {
+        method: "POST",
+        body: JSON.stringify({user:{email: email, passwordhash: passwordhash}}),
+        headers: new Headers ({
+          "Content-Type": "application/json"
+        })
+      }).then(
+        (response) => response.json()
+        ).then((data) => {
+          console.log(data);
+          props.setToken(data.sessionToken)
+        })
+      }
   }
 
   return(
@@ -28,11 +34,11 @@ const Signup = (props) => {
       <Form id='signup' onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
-          <Input onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
+          <Input autoComplete="off" type="email" onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="password">Password</Label>
-          <Input type="password" onChange={(e) => setPasswordHash(e.target.value)} name="password" value={passwordhash}/>  
+          <Input autoComplete="off" type="password" onChange={(e) => setPasswordHash(e.target.value)} name="password" value={passwordhash}/>  
         </FormGroup>
         <Button id="button" type="submit">Signup</Button>
       </Form>
