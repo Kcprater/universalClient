@@ -4,7 +4,6 @@ import './Ratings.css';
 import APIURL from '../helpers/environment'
 
 const CreateRating = (props) => {
-  // const [rider, setRider] = useState('');//may not need
   const [nameOfRide, setNameOfRide] = useState('');
   const [date, setDate] = useState('');
   const [waitTime, setWaitTime] = useState('');
@@ -34,8 +33,8 @@ const CreateRating = (props) => {
 
   return(
     <div>
-      <h3>Create a Rating</h3>
-      <Form onSubmit={handleSubmit}>
+      <h2>Create a Rating</h2>
+      <Form id="tableCreate" onSubmit={handleSubmit}>
         <FormGroup>
         <Label htmlFor="nameOfRide"/>
         <Input type="select" id="nameOfRide" name="nameOfRide" value={nameOfRide} onChange={(e) => setNameOfRide(e.target.value)} placeholder="Name of Ride">

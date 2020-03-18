@@ -20,14 +20,14 @@ const RatingTable = (props) => {
       return(
         <tr key={index}>
           {/* <th scope="row"></th> */}
-          <td>{riderrating.nameOfRide}</td>
-          <td>{riderrating.date}</td>
-          <td>{riderrating.waitTime}</td>
-          <td>{riderrating.rideRating}</td>
-          <td>{riderrating.comments}</td>
+          <td className="tdName">{riderrating.nameOfRide}</td>
+          <td className="tdDate">{riderrating.date}</td>
+          <td className="tdWait">{riderrating.waitTime}</td>
+          <td className="tdRate">{riderrating.rideRating}</td>
+          <td className="tdCom">{riderrating.comments}</td>
           <td>
-            <Button size="small" id="update" color="primary" onClick={() => {props.editUpdateRating(riderrating); props.updateOn()}}>Update</Button>
-            <Button size="small" id="delete" color="danger" onClick={() => {deleteRating(riderrating)}}>Delete</Button>
+            <Button id="update" color="primary" onClick={() => {props.editUpdateRating(riderrating); props.updateOn()}}>Update</Button>
+            <Button id="delete" color="danger" onClick={() => {deleteRating(riderrating)}}>Delete</Button>
           </td>
         </tr>
       )
@@ -36,17 +36,17 @@ const RatingTable = (props) => {
       
   return(
     <div>
-      <h3>Rating History</h3>
+      <h2>Rating History</h2>
       <hr/>
       <Table className="table-main">
         <thead>
           <tr>
             {/* <th>#</th> */}
-            <th>Attraction Name</th>
-            <th>Date</th>
-            <th>Wait Time (minutes)</th>
-            <th>Attraction Rating</th>
-            <th>Comments</th>
+            <th className="name">Attraction Name</th>
+            <th className="date">Date</th>
+            <th className="wait">Wait Time (minutes)</th>
+            <th className="rating">Attraction Rating</th>
+            <th className="comments">Comments</th>
           </tr>
         </thead>
         <tbody>

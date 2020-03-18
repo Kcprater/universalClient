@@ -2,6 +2,7 @@
 background-color: darkblue;
 height: 3em;
 margin-top: -10px;
+margin-bottom: 1em;;
 }
 
 .title{
@@ -9,6 +10,8 @@ margin-top: -10px;
   color: white;
   font-size: 40px;
   text-align: center;
+  font-family: 'Gotu', sans-serif;
+  font-weight: bolder;
 }
 
 #logout{
@@ -16,4 +19,9 @@ margin-top: -10px;
   color: white;
   border-radius: 20px;
   border: 3px solid white;
+  font-family: 'Gotu', sans-serif;
+}
+
+#logout:hover {
+  background-color: black;
 }

@@ -3,7 +3,6 @@ import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} fr
 import APIURL from '../helpers/environment'
 
 const RatingEdit = (props) => {
-  // const [editID, setEditID] = useState(props.rider.id)
   const [editNameOfRide, setEditNameOfRide] = useState(props.ratingToUpdate.nameOfRide);
   const [editDate, setEditDate] = useState(props.ratingToUpdate.date);
   const [editWaitTime, setEditWaitTime] = useState(props.ratingToUpdate.waitTime);

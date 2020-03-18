@@ -7,18 +7,22 @@ import "./auth.css"
 
 const Auth = (props) => {
   return (
-    <Container id="auth-con">
-      <Row>
-        <Col md='12'>
-          <Signup setToken={props.setToken}/>
-        </Col>
-      </Row>
-      <Row>
-        <Col md='12'>
-          <Login setToken={props.setToken}/>
-        </Col>
-      </Row>
-    </Container>
+    <div className="main">
+      <Container id="signup-con">
+        <Row>
+          <Col md='12'>
+            <Signup setToken={props.setToken}/>
+          </Col>
+        </Row>
+      </Container>
+      <Container id="login-con">
+        <Row>
+          <Col md='12'>
+            <Login setToken={props.setToken}/>
+          </Col>
+        </Row>
+      </Container>
+    </div>
   )
 }
 

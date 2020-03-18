@@ -1,8 +1,22 @@
-#auth-con{
+.main{
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+}
+
+#signup-con{
+  display: flex;
+  justify-content: flex-start;
   color: white;
+  font-family: 'Gotu', sans-serif;
+  margin-top: 1em;
+}
+
+#login-con{
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  font-family: 'Gotu', sans-serif;
+  margin-top: 1em;
 }
 
 #button{
@@ -10,6 +24,7 @@
     color: white;
     border-radius: 20px;
     border: 3px solid white;
+    font-family: 'Gotu', sans-serif;
   }
 
 button:focus {
@@ -17,7 +32,7 @@ button:focus {
 }
 
 #button:hover {
-  background-color: red;
+  background-color: black;
 }
 
 button:active {

@@ -9,9 +9,6 @@ import {
   NavItem,
   Button,
 } from "reactstrap";
-// import { Route, Link, Switch} from 'react-router-dom';
-// import Home from './Home' //<Route exact path="/home">Home /></Route>
-// import logo from '../assets/logo2.png';
 
 const Sitebar = (props) => {
 
@@ -22,7 +19,6 @@ const Sitebar = (props) => {
     setIsOpen(newIsOpen);
   }
 
-//deleted href="/" after navbarbrand
   return(
     <div>
     <div className="title">UNIVERSAL ORLANDO ATTRACTION GUIDE! </div>

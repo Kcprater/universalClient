@@ -9,14 +9,14 @@ th{
   border: 1px solid white;
   color: white;
   font-size: 18px;
+  font-family: 'Gotu', sans-serif;
   background-color: darkblue;
 }
 
 table {
   color: white;
-  /* max-height: 300px; */
   position: absolute;
-  top: 15%;
+  top: 18%;
   left: 5%;
   transform: translate( 0%, 0%);
   border-collapse: collapse;
@@ -24,7 +24,7 @@ table {
 }
 
 .table-main thead{
-  width: 97%
+  width: 84%
 }
 
 .table-main tbody{
@@ -36,18 +36,67 @@ thead, tbody {
   display: block;
 }
 
-h3{
+h2{
   color: white;
+  font-family: 'Gotu', sans-serif;
+  text-align: center;
 }
 
 #update {
   border-radius: 10px;
+  margin-bottom: .75em;
 }
 
 #delete {
   border-radius: 10px;
 }
 
-/* #update.titlestyle{
-  font-size: small;
-} */
+.name {
+  width: 19%;
+  text-align: center;
+}
+
+.date {
+  width: 18%;
+  text-align: center center;
+}
+
+.wait{
+  width: 13%;
+  text-align: center;
+}
+
+.rating{
+  width: 15%;
+  text-align: center center;
+}
+
+.comments{
+  width: 10%;
+}
+
+.tdName{
+  width: 18%;
+  text-align: center;
+}
+
+.tdDate{
+  width: 18%;
+  text-align: center;
+  
+}
+
+.tdWait{
+  width: 18%;
+  text-align: center;
+}
+
+.tdRate{
+  width: 18%;
+  text-align: center;
+}
+
+.tdCom{
+  width: 18%;
+  text-align: center;
+}
