@@ -11,7 +11,7 @@ const RatingIndex = (props) => {
   const [riderratings, setRiderRatings] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);
   const [ratingToUpdate, setRatingToUpdate] = useState({});
-
+  
   const fetchRatings = () => {
     fetch(`${APIURL}/api/rating`, {
       method: "GET",
@@ -29,15 +29,17 @@ const RatingIndex = (props) => {
     fetchRatings();
   }, [])
 
+  
+  
   const editUpdateRating = (riderrating) => {
     setRatingToUpdate(riderrating);
     // console.log(riderrating);
   }
-
+  
   const updateOn = () => {
     setUpdateActive(true);
   }
-
+  
   const updateOff = () => {
     setUpdateActive(false);
   }
@@ -49,8 +51,7 @@ const RatingIndex = (props) => {
           <CreateRating fetchRatings={fetchRatings} token={props.token}/>
         </Col>
         <Col md="8">
-          <RatingTable riderratings={riderratings} editUpdateRating={editUpdateRating} updateOn={updateOn} fetchRatings={fetchRatings}
-          token={props.token}/>
+         <RatingTable riderratings={riderratings} editUpdateRating={editUpdateRating} updateOn={updateOn} fetchRatings={fetchRatings} token={props.token}/>
         </Col>
         {updateActive ? <EditRating ratingToUpdate={ratingToUpdate} 
         updateOff={updateOff} token={props.token} fetchRatings={fetchRatings}/> : <></>}

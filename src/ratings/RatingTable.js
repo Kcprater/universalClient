@@ -15,8 +15,8 @@ const RatingTable = (props) => {
     })
     .then(() => props.fetchRatings())
   }
-
-  const riderratingMapper = () => {
+  
+const riderratingMapper = () => {
     return props.riderratings.map((riderrating, index) => {
       return(
         <tr key={index}>
@@ -34,7 +34,7 @@ const RatingTable = (props) => {
       )
     })
   }
-      
+
   return(
     <div>
       <h2>Rating History</h2>
@@ -57,5 +57,6 @@ const RatingTable = (props) => {
     </div>
   )
 }
+
 
 export default RatingTable;
