@@ -9,6 +9,7 @@ const Login = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    if(email && password) {
     fetch(`${APIURL}/api/user/login`, {
       method: "POST",
       body: JSON.stringify({user: {email: email, password: password}}),
@@ -20,7 +21,10 @@ const Login = (props) => {
       ).then((data) => {
         props.setToken(data.sessionToken);
       })
+  } else {
+    alert("All Input Fields Must Be Complete!")
   }
+}
 
   return(
     <div>
@@ -28,7 +32,7 @@ const Login = (props) => {
       <Form id="login" onSubmit={handleSubmit}>
         <FormGroup>
           <Label htmlFor="email">Email</Label>
-          <Input autocomplete="off" onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
+          <Input autoComplete="off" onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
         </FormGroup>
         <FormGroup>
           <Label htmlFor="password">Password</Label>

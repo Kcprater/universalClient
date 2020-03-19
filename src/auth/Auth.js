@@ -4,7 +4,6 @@ import Login from './Login';
 import Signup from './Signup';
 import "./auth.css"
 
-
 const Auth = (props) => {
   return (
     <div className="main">

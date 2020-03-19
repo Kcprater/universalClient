@@ -6,7 +6,6 @@ import EditRating from "./EditRating";
 import APIURL from '../helpers/environment'
 
 const RatingIndex = (props) => {
-  console.log(props)
 
   const [riderratings, setRiderRatings] = useState([]);
   const [updateActive, setUpdateActive] = useState(false);
@@ -29,11 +28,8 @@ const RatingIndex = (props) => {
     fetchRatings();
   }, [])
 
-  
-  
   const editUpdateRating = (riderrating) => {
     setRatingToUpdate(riderrating);
-    // console.log(riderrating);
   }
   
   const updateOn = () => {
@@ -50,14 +46,15 @@ const RatingIndex = (props) => {
         <Col md="3">
           <CreateRating fetchRatings={fetchRatings} token={props.token}/>
         </Col>
+
         <Col md="8">
          <RatingTable riderratings={riderratings} editUpdateRating={editUpdateRating} updateOn={updateOn} fetchRatings={fetchRatings} token={props.token}/>
         </Col>
+
         {updateActive ? <EditRating ratingToUpdate={ratingToUpdate} 
         updateOff={updateOff} token={props.token} fetchRatings={fetchRatings}/> : <></>}
       </Row>
     </Container>
   )
 }
-
 export default RatingIndex;

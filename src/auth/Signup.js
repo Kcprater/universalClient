@@ -36,14 +36,14 @@ const Signup = (props) => {
           <Label htmlFor="email">Email</Label>
           <Input autoComplete="off" type="email" onChange={(e) => setEmail(e.target.value)} name="email" value={email}/>
         </FormGroup>
+
         <FormGroup>
           <Label htmlFor="password">Password</Label>
           <Input autoComplete="off" type="password" onChange={(e) => setPasswordHash(e.target.value)} name="password" value={passwordhash}/>  
         </FormGroup>
-        <Button id="button" type="submit">Signup</Button>
+          <Button id="button" type="submit">Signup</Button>
       </Form>
     </div>
   )
 }
-
 export default Signup;

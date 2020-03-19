@@ -15,8 +15,9 @@ const RatingTable = (props) => {
     })
     .then(() => props.fetchRatings())
   }
-  
-const riderratingMapper = () => {
+
+  const riderratingMapper = () => {
+    
     return props.riderratings.map((riderrating, index) => {
       return(
         <tr key={index}>

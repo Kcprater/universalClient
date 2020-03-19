@@ -32,8 +32,6 @@ function App() {
     : <Auth setToken={setToken}/>)
   }
 
-
-
   return (
     <div>
       <Sitebar clickLogout={clearToken} token={sessionToken}/>
